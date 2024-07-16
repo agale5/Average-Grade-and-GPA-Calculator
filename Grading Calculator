@@ -1,0 +1,35 @@
+from breezypythongui import EasyFrame
+
+class GradingCalculator(EasyFrame):
+    def __init__(self):
+        EasyFrame.__init__(self, title = "Average Grade and GPA Calculator")
+        self.addLabel(text = "Number # of Courses for Average Grade:", row = 0, column = 0)
+        self.num_courses_average = self.addIntegerField(value = 1, row = 0, column = 1)
+
+        self.addButton(text = "Calculate the Average Grades", row = 0, column = 2, command = self.calculate_gpa)
+
+        self.averageGrade_label = self.addLabel(text = "", row = 1, column = 0, columnspan = 3)
+
+        self.addLabel(text = "Number # of courses for GPA:", row = 2, column = 0)
+        self.num_courses_gpa = self.addIntegerField(value = 1, row = 2, column = 1)
+
+        self.addButton(text = "Calculate the GPA", row = 2, column = 2, command = self.calculate_gpa)
+
+        self.gpa_label = self.addLabel(text = "", row =3, column = 0, columnspan = 3)
+    def calculate_average(self):
+        #Retreive number of courses entered.
+        #Initialize new variable: total_grades.
+        #Create new entry box for entering the grade percentage for each course.
+    def calculate_gpa(self):
+        #Retreive number of courses entered.
+        #Initialize new variables: total_gradepoints and total_credits.
+        #Convert grade points to a letter grade.
+        #Create new entry box for entering the letter grade for each course.
+        #Create new entry box for entering amount of credits per course.
+    def letterGrade_to_points(self, letter_grade):
+        #Convertion for the grading scale.
+def main():
+    GradingCalculator.mainloop()
+if __name__ == "__main__":
+    main()
+        
