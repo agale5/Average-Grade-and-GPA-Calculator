@@ -6,7 +6,7 @@ class GradingCalculator(EasyFrame):
         self.addLabel(text = "Number # of Courses for Average Grade:", row = 0, column = 0)
         self.num_courses_average = self.addIntegerField(value = 1, row = 0, column = 1)
 
-        self.addButton(text = "Calculate the Average Grades", row = 0, column = 2, command = self.calculate_gpa)
+        self.addButton(text = "Calculate the Average Grades", row = 0, column = 2, command = self.calculate_average)
 
         self.averageGrade_label = self.addLabel(text = "", row = 1, column = 0, columnspan = 3)
 
@@ -18,18 +18,34 @@ class GradingCalculator(EasyFrame):
         self.gpa_label = self.addLabel(text = "", row =3, column = 0, columnspan = 3)
     def calculate_average(self):
         #Retreive number of courses entered.
+        num_avergEntry = self.num_courses_average.getNumber()
         #Initialize new variable: total_grades.
+        total_grades = 0
         #Create new entry box for entering the grade percentage for each course.
+        grade_percentage = self.prompterBox(title = "Grade Percentage", promptString = "Enter your grade percentage for this course: ")
+        #Calculation for grade average --> average_grade = total_grades / num_courses
+        return None
     def calculate_gpa(self):
         #Retreive number of courses entered.
+        num_gpaEntry = self.num_course_gpa.getNumber()
         #Initialize new variables: total_gradepoints and total_credits.
+        total_gradePoints = 0
+        total_credits = 0
         #Convert grade points to a letter grade.
         #Create new entry box for entering the letter grade for each course.
+        letter_grade = self.prompterBox(title = "Letter Grade", promptString = "Enter your letter grade for this course: ")
         #Create new entry box for entering amount of credits per course.
+        course_credits = self.prompterBox(title = "Credits", promptString = "Enter the amount of credits for this course: ")
+        #Calculation for gpa --> gpa = total_gradePoints += grade_points * course_credits
+        return None
     def letterGrade_to_points(self, letter_grade):
         #Convertion for the grading scale.
-def main():
-    GradingCalculator.mainloop()
-if __name__ == "__main__":
-    main()
+        return None
+    def main(self):
+        return None
+
+calculator = GradingCalculator()
+calculator.mainloop()
+        
+        
         
